@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.CategoriaHorasDocentes" table="categoria_horas_docentes">
+        <comment>para almacenar las diferentes categorias de horas que puede tener un docente, ademas de las horas de docencia: tutoria, investigacion etc</comment>
+        <id name="idCategoriaHorasDocentes" type="int">
+            <column name="id_categoria_horas_docentes" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreCategoria" type="string">
+            <column name="nombre_categoria" length="50" not-null="true">
+                <comment>Es el nombre de la categoria</comment>
+            </column>
+        </property>
+        <property name="siglas" type="string">
+            <column name="siglas" length="3" not-null="true">
+                <comment>Son las siglas de la categoria</comment>
+            </column>
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="150" not-null="true">
+                <comment>Es el tipo de categoria que se evaluara al docente</comment>
+            </column>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="estado" not-null="true">
+                <comment>Es el estado de la categoria</comment>
+            </column>
+        </property>
+        <property name="periodo" type="string">
+            <column name="periodo" length="70" not-null="true">
+                <comment>Periodo al que se aplica estas categorias Eje: Primer semestre, Segundo Semestre etc</comment>
+            </column>
+        </property>
+        <set name="profesorHorarioACumplirs" table="profesor_horario_a_cumplir" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_id_categoria_horas_docentes" not-null="true" />
+            </key>
+            <one-to-many class="Pojo.ProfesorHorarioACumplir" />
+        </set>
+        <set name="profesorHorarioEkudemics" table="profesor_horario_ekudemic" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_id_categoria_horas_docentes" not-null="true" />
+            </key>
+            <one-to-many class="Pojo.ProfesorHorarioEkudemic" />
+        </set>
+    </class>
+</hibernate-mapping>

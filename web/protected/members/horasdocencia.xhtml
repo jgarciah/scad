@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <h:outputStylesheet name="css/horasdocencia.css"  />
+        <title>Horario de Docencia</title>
+    </h:head>
+    <h:body>
+        
+            <div id="div_horasdocencia">
+              <h:form id="form_horasdocencia">
+                  <p:messages id="messages" showDetail="false" autoUpdate="true" />
+                  <h:panelGrid columns="8" id="customInputStyles" >
+                      
+                      <p:outputLabel for="calendarioFechaInicial" value="Fecha Inicial:" />                      
+                      <p:calendar showOn="button" id="calendarioFechaInicial" navigator="true" required="true" requiredMessage="Debe de escoger una Fecha Inicial"  />
+                      
+                      <p:outputLabel for="calendarioFechaFinal" value="Fecha Final:" />  
+                      <p:calendar showOn="button" id="calendarioFechaFinal"  navigator="true"  required="true" requiredMessage="Debe de elegir una Fecha Final" />
+                      
+                      
+                      <p:selectOneMenu id="facultadCombo" value="#{horadocencia.facultadSeleccionada}"  styleClass="with-placeholder" panelStyleClass="hide-disabled" required="true" requiredMessage="Debe de elegir una Facultad" >
+                          <f:selectItem itemLabel="Elija la Facultad" itemDisabled="true" />
+                          <f:selectItems value="#{horadocencia.comboFacultades}" var="facultadItem" itemValue="#{facultadItem}" itemLabel="#{facultadItem}" />
+                      </p:selectOneMenu>
+                      
+                      <p:selectOneMenu id="jornadaCombo" styleClass="with-placeholder" panelStyleClass="hide-disabled" required="true"  requiredMessage="Debe de elegir una Jornada"  >
+                              <f:selectItem itemLabel="Elija la Jornada" itemDisabled="true" />
+                              <f:selectItem  itemLabel="Diurna" itemValue="Diurna" />
+                              <f:selectItem  itemLabel="Vespertina" itemValue="Vespertina" />
+                              <f:selectItem  itemLabel="Nocturna" itemValue="Nocturna" />
+                      </p:selectOneMenu>
+                      
+                      
+                     
+                      <p:commandButton value="Buscar" style="display:block; margin:0 auto;" ajax="false" process="@this"  update="form_horasdocencia" />
+                      
+                  </h:panelGrid>
+                
+                  <p:dataTable id="dtb_horario_docencia"  paginator="true" rows="15">
+                      <p:column headerText="Hora">
+                          <f:facet name="header">
+                              <h:outputText value="Hora" />
+                          </f:facet>
+                      </p:column>
+                      
+                      <p:column headerText="Materia">
+                          <f:facet name="header">
+                              <h:outputText value="Materia" />
+                          </f:facet>
+                      </p:column>
+                      
+                      
+                       <p:column headerText="Profesor">
+                          <f:facet name="header">
+                              <h:outputText value="Profesor" />
+                          </f:facet>
+                      </p:column>
+                      
+                      <p:column headerText="Novedad">
+                          <f:facet name="header">
+                              <h:outputText value="Novedad" />
+                          </f:facet>
+                      </p:column>
+                      
+                      <p:column headerText="Observacion">
+                          <f:facet name="header">
+                              <h:outputText  value="Observacion"/>
+                          </f:facet>
+                      </p:column>
+                      
+                      
+                      <p:column headerText="Accion">
+                          <f:facet name="header">
+                              <h:outputText value="Accion"/>
+                          </f:facet>
+                      </p:column>
+                      
+                      
+                      <p:column headerText="Estado">
+                          <f:facet name="header">
+                              <h:outputText value="Estado" />
+                          </f:facet>
+                      </p:column>
+                      
+                      
+                  </p:dataTable>
+                  
+                  
+              </h:form>
+                
+            </div>
+            
+        
+    </h:body>
+
+
+
+
+</html>
+

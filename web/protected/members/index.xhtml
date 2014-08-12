@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+    <h:head>
+
+    <h:outputScript library="js" name="horasdocencia.js" />
+    <h:outputStylesheet name="horasdocencia.css" library="css"/> 
+    <title>Sistema de Control de Docencias</title>
+    <h:graphicImage library="images" name="logoHD.png" />
+    
+    </h:head>
+    <h:body>
+        
+		<p:tabView dynamic="true" cache="true" id="tabView" >
+			<p:tab id="tab1" title="Horas Docencias">
+				<ui:include src="horasdocencia.xhtml" />
+			</p:tab>
+			<p:tab id="tab3" title="Mantenimiento de Categorias">
+				<ui:include src="mantenimientocategorias.xhtml" />
+			</p:tab>
+			<p:tab id="tab4" title="Parametros de Horario">
+				<ui:include src="parametroshorario.xhtml" />
+			</p:tab>
+			<p:tab id="tab5" title="Control de horario">
+				<ui:include src="controlHorario.xhtml" />
+			</p:tab>			
+		</p:tabView>		
+    <ui:include src="/WEB-INF/dialogs/addShowDialog.xhtml" />
+        
+        
+    </h:body>
+</html>
+

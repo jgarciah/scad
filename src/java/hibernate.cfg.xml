@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+    <property name="hibernate.connection.url">jdbc:postgresql://10.2.0.1:5432/ekudemic</property>
+    <property name="hibernate.connection.username">postgres</property>
+    <property name="hibernate.connection.password">Kn1ght2000-Sist2014</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.default_schema">scd</property>
+    <mapping resource="Pojo/ViInfoHorariosEkudemic.hbm.xml"/>
+    <mapping resource="Pojo/JustificacionNovedades.hbm.xml"/>
+    <mapping resource="Pojo/UsuarioScd.hbm.xml"/>
+    <mapping resource="Pojo/TipoNovedad.hbm.xml"/>
+    <mapping resource="Pojo/Inspectores.hbm.xml"/>
+    <mapping resource="Pojo/ProfesorHorarioEkudemic.hbm.xml"/>
+    <mapping resource="Pojo/CategoriaHorasDocentes.hbm.xml"/>
+    <mapping resource="Pojo/LogIngreso.hbm.xml"/>
+    <mapping resource="Pojo/NovedadesHorario.hbm.xml"/>
+    <mapping resource="Pojo/ProfesorHorarioACumplir.hbm.xml"/>
+    <mapping resource="Pojo/HorarioXCategoria.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

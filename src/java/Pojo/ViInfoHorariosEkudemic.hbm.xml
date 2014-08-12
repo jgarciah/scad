@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.ViInfoHorariosEkudemic" table="vi_info_horarios_ekudemic">
+        <composite-id name="id" class="Pojo.ViInfoHorariosEkudemicId">
+            <key-property name="facultad" type="string">
+                <column name="facultad" length="100" />
+            </key-property>
+            <key-property name="jornada" type="string">
+                <column name="jornada" length="100" />
+            </key-property>
+            <key-property name="dia" type="string">
+                <column name="dia" length="15" />
+            </key-property>
+            <key-property name="hora" type="time">
+                <column name="hora" length="15" />
+            </key-property>
+            <key-property name="curso" type="string">
+                <column name="curso" length="10" />
+            </key-property>
+            <key-property name="materia" type="string">
+                <column name="materia" length="100" />
+            </key-property>
+            <key-property name="cedulaDocente" type="string">
+                <column name="cedula_docente" length="100" />
+            </key-property>
+            <key-property name="nombreDocente" type="string">
+                <column name="nombre_docente" length="100" />
+            </key-property>
+            <key-property name="apellidoDocente" type="string">
+                <column name="apellido_docente" length="100" />
+            </key-property>
+            <key-property name="anio" type="java.lang.Integer">
+                <column name="anio" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

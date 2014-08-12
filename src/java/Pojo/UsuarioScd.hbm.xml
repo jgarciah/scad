@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.UsuarioScd" table="usuario_scd">
+        <id name="idUsuario" type="int">
+            <column name="id_usuario" />
+            <generator class="assigned" />
+        </id>
+        <property name="usuario" type="string">
+            <column name="usuario" length="60" not-null="true">
+                <comment>Es el usuario que se usa para ingresar al sistema</comment>
+            </column>
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="60">
+                <comment>Es la clave del usuario</comment>
+            </column>
+        </property>
+        <property name="rol" type="char">
+            <column name="rol" length="1" not-null="true">
+                <comment>Es el rol que tendra el usuario sea este A administrador o I inspector normal</comment>
+            </column>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="estado" not-null="true">
+                <comment>Es el que me indica si esta activo o no el usuario</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true">
+                <comment>Es el email del usuario</comment>
+            </column>
+        </property>
+        <set name="logIngresos" table="log_ingreso" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_id_usuario" not-null="true" />
+            </key>
+            <one-to-many class="Pojo.LogIngreso" />
+        </set>
+    </class>
+</hibernate-mapping>

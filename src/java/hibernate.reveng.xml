@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="scd"/>
+ 
+  <table-filter match-name="categoria_horas_docentes"/>
+  <table-filter match-name="horario_x_categoria"/>
+  <table-filter match-name="inspectores"/>
+  <table-filter match-name="justificacion_novedades"/>
+  <table-filter match-name="log_ingreso"/>
+  <table-filter match-name="novedades_horario"/>
+  <table-filter match-name="profesor_horario_a_cumplir"/>
+  <table-filter match-name="profesor_horario_ekudemic"/>
+  <table-filter match-name="tipo_novedad"/>
+  <table-filter match-name="usuario_scd"/>
+  <table-filter match-name="vi_info_horarios_ekudemic"/>
+</hibernate-reverse-engineering>

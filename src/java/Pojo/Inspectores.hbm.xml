@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.Inspectores" table="inspectores">
+        <id name="idInspector" type="int">
+            <column name="id_inspector" />
+            <generator class="assigned" />
+        </id>
+        <property name="primerNombre" type="string">
+            <column name="primer_nombre" length="60" not-null="true">
+                <comment>Es el primer nombre del inspector</comment>
+            </column>
+        </property>
+        <property name="segundoNombre" type="string">
+            <column name="segundo_nombre" length="60" not-null="true">
+                <comment>Es el segundo nombre del inspector</comment>
+            </column>
+        </property>
+        <property name="primerApellido" type="string">
+            <column name="primer_apellido" length="60" not-null="true">
+                <comment>Es el primer apellido del inspector</comment>
+            </column>
+        </property>
+        <property name="segundoApellido" type="string">
+            <column name="segundo_apellido" length="60" not-null="true">
+                <comment>Es el segundo apellido del inspector</comment>
+            </column>
+        </property>
+        <property name="cedula" type="string">
+            <column name="cedula" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

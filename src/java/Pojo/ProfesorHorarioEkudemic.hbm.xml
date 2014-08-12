@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.ProfesorHorarioEkudemic" table="profesor_horario_ekudemic">
+        <comment>en esta tabla se almacenar&#225;n los horarios por d&#237;a y categoria de cada docente. la informaci&#243;n de los horarios ser&#225; consultada de: docencia -
+        Ekudemic dem&#225;s categor&#237;as - SCD</comment>
+        <id name="idProfesorHorarioEkudemic" type="int">
+            <column name="id_profesor_horario_ekudemic" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="categoriaHorasDocentes" class="Pojo.CategoriaHorasDocentes" fetch="select">
+            <column name="fk_id_categoria_horas_docentes" not-null="true" />
+        </many-to-one>
+        <property name="fkProfesor" type="string">
+            <column name="fk_profesor" length="20" not-null="true">
+                <comment>Es la cedula del docente</comment>
+            </column>
+        </property>
+        <property name="fkMateria" type="string">
+            <column name="fk_materia" not-null="true">
+                <comment>Es el nombre de la materia que dicta el docente</comment>
+            </column>
+        </property>
+        <property name="nombreApellidoDocente" type="string">
+            <column name="nombre_apellido_docente" not-null="true">
+                <comment>Es el nombre completo del docente</comment>
+            </column>
+        </property>
+        <property name="fechaHorarioMateria" type="timestamp">
+            <column name="fecha_horario_materia" length="29" not-null="true">
+                <comment>Fecha en que dicta la materia</comment>
+            </column>
+        </property>
+        <property name="jornada" type="char">
+            <column name="jornada" length="1" not-null="true">
+                <comment>Jornada de la materia</comment>
+            </column>
+        </property>
+        <property name="cursoParalelo" type="string">
+            <column name="curso_paralelo" length="3" not-null="true">
+                <comment>Nombre del paralelo y curso al que da clase el docente '3C' ejemplo</comment>
+            </column>
+        </property>
+        <set name="novedadesHorarios" table="novedades_horario" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_id_profesor_horario_ekudemic" not-null="true" />
+            </key>
+            <one-to-many class="Pojo.NovedadesHorario" />
+        </set>
+    </class>
+</hibernate-mapping>

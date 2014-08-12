@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"          
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+  <h:body> 
+<div class="wrapper">
+            <p:panel id="headerSection">
+            <p:panel id="header" style="height: 80px; margin-bottom: 2px;">
+            <h1>TechBuzz</h1>
+            </p:panel>
+            <h:form id="mainMenuForm">
+            <p:menubar>
+            <p:menuitem value="Home" url="home.jsf"/>
+            <p:menuitem value="New Post" url="createPost.jsf"/>
+            <p:menuitem value="Search" url="search.jsf"/>
+            <p:menuitem value="My Account" url="userAccount.jsf"/>
+            <p:menuitem value="Administration" url="admin.jsf"/>
+            </p:menubar>
+            </h:form>
+            </p:panel>
+            <p:panel style="margin-bottom: 3px; min-height: 500px;">
+            <ui:insert name="bodyContent"/> 
+            </p:panel>
+ </div>
+            <p:sticky target="headerSection" margin="3"/>
+            </h:body>
+</html>
+

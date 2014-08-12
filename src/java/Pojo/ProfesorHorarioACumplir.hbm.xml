@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.ProfesorHorarioACumplir" table="profesor_horario_a_cumplir">
+        <comment>Es reparto de horario cantidad de horas ya sea por tutoria, por investigacion, docencia Ejemplo: Luis Cevallos 30 horas tutorias. 20 de Investigacion De una fecha
+        inicial hasta una fecha final, esto para controlar los posibles cambios que pueda tener un horario</comment>
+        <id name="idPhc" type="int">
+            <column name="id_phc" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="categoriaHorasDocentes" class="Pojo.CategoriaHorasDocentes" fetch="select">
+            <column name="fk_id_categoria_horas_docentes" not-null="true" />
+        </many-to-one>
+        <property name="cedulaDocente" type="string">
+            <column name="cedula_docente" length="15" not-null="true">
+                <comment>Es el numero de cedula del docente</comment>
+            </column>
+        </property>
+        <property name="fechaInicio" type="date">
+            <column name="fecha_inicio" length="13" not-null="true">
+                <comment>Fecha de inicio de este horario</comment>
+            </column>
+        </property>
+        <property name="fechaFin" type="date">
+            <column name="fecha_fin" length="13" not-null="true">
+                <comment>Fecha fin del horario del docente</comment>
+            </column>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="estado" not-null="true">
+                <comment>el estado de esta categoria</comment>
+            </column>
+        </property>
+        <property name="cantidadHoras" type="short">
+            <column name="cantidad_horas" not-null="true">
+                <comment>El numero de horas que debe de cumplir</comment>
+            </column>
+        </property>
+        <property name="facultad" type="string">
+            <column name="facultad" length="150" not-null="true">
+                <comment>Es el nombre de la facultad que el docente dicta sus clases</comment>
+            </column>
+        </property>
+        <set name="horarioXCategorias" table="horario_x_categoria" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="fk_id_phc" not-null="true" />
+            </key>
+            <one-to-many class="Pojo.HorarioXCategoria" />
+        </set>
+    </class>
+</hibernate-mapping>

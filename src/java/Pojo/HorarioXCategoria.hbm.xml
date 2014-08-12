@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.HorarioXCategoria" table="horario_x_categoria">
+        <comment>el detalle del total de horas que debe cumplir un docente. ejemplo: de las 50 horas de tutoria que debe cumplir Luis Cevallos, tiene asignadas 7 horas el lunes, 3
+        horas el martes, 8 horas el jueves.</comment>
+        <id name="idHorarioCategoria" type="int">
+            <column name="id_horario_categoria" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="profesorHorarioACumplir" class="Pojo.ProfesorHorarioACumplir" fetch="select">
+            <column name="fk_id_phc" not-null="true" />
+        </many-to-one>
+        <property name="dia" type="string">
+            <column name="dia" length="50" not-null="true">
+                <comment>Dia de Lunes a Viernes</comment>
+            </column>
+        </property>
+        <property name="horaInicio" type="string">
+            <column name="hora_inicio" length="50" not-null="true">
+                <comment>Es la hora en la que inicia su categoria de hora es decir puede empezar a las 08:00 HT o HI</comment>
+            </column>
+        </property>
+        <property name="estado" type="boolean">
+            <column name="estado" not-null="true">
+                <comment>Si esta activo o no esta categoria</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

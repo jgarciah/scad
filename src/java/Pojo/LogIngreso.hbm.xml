@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 12/08/2014 09:08:59 AM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="Pojo.LogIngreso" table="log_ingreso">
+        <composite-id name="id" class="Pojo.LogIngresoId">
+            <key-property name="fechaIngreso" type="timestamp">
+                <column name="fecha_ingreso" length="29" />
+            </key-property>
+            <key-property name="fkIdUsuario" type="long">
+                <column name="fk_id_usuario" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="usuarioScd" class="Pojo.UsuarioScd" update="false" insert="false" fetch="select">
+            <column name="fk_id_usuario" not-null="true" />
+        </many-to-one>
+        <property name="accion" type="string">
+            <column name="accion" not-null="true">
+                <comment>Si salio del sistema o ingreso</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
