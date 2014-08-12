@@ -17,7 +17,7 @@
                       
                       <p:outputLabel for="calendarioFechaInicial" value="Fecha Inicial:" />                      
                       <p:calendar showOn="button" id="calendarioFechaInicial" navigator="true" required="true" requiredMessage="Debe de escoger una Fecha Inicial"  >
-                          <f:ajax 
+                          <p:ajax event="change" listener="#{}" 
                       </p:calendar>  
                       
                       <p:outputLabel for="calendarioFechaFinal" value="Fecha Final:" />  

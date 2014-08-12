@@ -78,7 +78,7 @@ public class horadocencia {
         this.facultadSeleccionada = facultadSeleccionada;
     }
 
-  
+    
     
     
     
