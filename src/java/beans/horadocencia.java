@@ -129,14 +129,10 @@ public class horadocencia implements Serializable{
         
         Date date = (Date) event.getObject();
         
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        int year=calendar.get(Calendar.YEAR);
-        
-        int month=calendar.get(Calendar.MONTH); //Hay que sumarle uno al mes
-        int day=calendar.get(Calendar.DAY_OF_MONTH); 
+       
         
         System.out.println("Esta es la fecha inicial: "+this.getFechaInicial().toString());
+        System.out.println("Esta es la fecha Final: "+this.getFechaFinal().toString());
         //TODO: Aqui debo de buscar las facultades existentes en esa epoca
         
         
