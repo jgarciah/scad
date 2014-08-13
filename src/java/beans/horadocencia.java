@@ -7,6 +7,7 @@
 package beans;
 
 import dao.DaoViInfoHorarioEkudemic;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -26,7 +27,7 @@ import util.HibernateUtil;
  */
 @Named(value = "horadocencia")
 @ViewScoped
-public class horadocencia {
+public class horadocencia implements Serializable{
 
     /**
      * Creates a new instance of horadocencia
