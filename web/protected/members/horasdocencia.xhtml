@@ -21,7 +21,9 @@
                       </p:calendar>  
                       
                       <p:outputLabel for="calendarioFechaFinal" value="Fecha Final:" />  
-                      <p:calendar showOn="button" id="calendarioFechaFinal"  navigator="true"  required="true" requiredMessage="Debe de elegir una Fecha Final" />
+                      <p:calendar showOn="button" id="calendarioFechaFinal"  navigator="true"  required="true" requiredMessage="Debe de elegir una Fecha Final" >
+                          <p:ajax event="dateSelect" listener="#{horadocencia.FechaFinalChange}"  />
+                      </p:calendar> 
                       
                       
                       <p:selectOneMenu id="facultadCombo" value="#{horadocencia.facultadSeleccionada}"  styleClass="with-placeholder" panelStyleClass="hide-disabled" required="true" requiredMessage="Debe de elegir una Facultad" >
