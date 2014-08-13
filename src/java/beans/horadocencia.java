@@ -84,11 +84,11 @@ public class horadocencia {
     public void FechaInicialChange(SelectEvent event)
     {
         Date date = (Date) event.getObject();
-        
+        System.out.println("Antes de entrar al Jodatime");
         
         DateTime jodaTime = new DateTime();
         
-        System.out.println("Este es el año men pilas "+jodaTime.getYear());
+      // System.out.println("Este es el año men pilas "+jodaTime.getYear());
         
     }
     
