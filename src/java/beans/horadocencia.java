@@ -10,11 +10,12 @@ import dao.DaoViInfoHorarioEkudemic;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import javax.inject.Named;
 import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.joda.time.DateTime;
 import org.primefaces.event.SelectEvent;
 import util.HibernateUtil;
 
@@ -83,6 +84,9 @@ public class horadocencia {
     public void FechaInicialChange(SelectEvent event)
     {
         Date date = (Date) event.getObject();
+        
+        DateTime jodaTime = new DateTime();
+        System.out.println("Este es el año men pilas "+jodaTime.getYear());
         
     }
     
