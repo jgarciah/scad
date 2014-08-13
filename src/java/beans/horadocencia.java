@@ -88,9 +88,11 @@ public class horadocencia {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int year=calendar.get(Calendar.YEAR);
-        System.out.println("Este es el año: "+year);
+        
+        int month=calendar.get(Calendar.MONTH);
+        int day=calendar.get(Calendar.DAY_OF_MONTH);
           
-      
+        System.out.println("Este es el año: "+year+ " este es el mes: "+month+" este es el dia: "+day);
         
     }
     
