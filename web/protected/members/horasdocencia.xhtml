@@ -16,12 +16,12 @@
                   <h:panelGrid columns="8" id="customInputStyles" >
                       
                       <p:outputLabel for="calendarioFechaInicial" value="Fecha Inicial:" />                      
-                      <p:calendar showOn="button" id="calendarioFechaInicial" navigator="true" required="true" requiredMessage="Debe de escoger una Fecha Inicial"  >
+                      <p:calendar showOn="button" id="calendarioFechaInicial" value="#{horadocencia.fechaInicial}" navigator="true" required="true" requiredMessage="Debe de escoger una Fecha Inicial"  >
                           <p:ajax event="dateSelect" listener="#{horadocencia.FechaInicialChange}"  />
                       </p:calendar>  
                       
                       <p:outputLabel for="calendarioFechaFinal" value="Fecha Final:" />  
-                      <p:calendar showOn="button" id="calendarioFechaFinal"  navigator="true"  required="true" requiredMessage="Debe de elegir una Fecha Final" >
+                      <p:calendar showOn="button" id="calendarioFechaFinal" value="#{horadocencia.fechaFinal}" navigator="true"  required="true" requiredMessage="Debe de elegir una Fecha Final" >
                           <p:ajax event="dateSelect" listener="#{horadocencia.FechaFinalChange}"  />
                       </p:calendar> 
                       
