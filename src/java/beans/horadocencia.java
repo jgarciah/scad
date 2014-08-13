@@ -8,12 +8,14 @@ package beans;
 
 import dao.DaoViInfoHorarioEkudemic;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.primefaces.event.SelectEvent;
 import util.HibernateUtil;
 
 /**
@@ -78,7 +80,11 @@ public class horadocencia {
         this.facultadSeleccionada = facultadSeleccionada;
     }
 
-    
+    public void FechaInicialChange(SelectEvent event)
+    {
+        Date date = (Date) event.getObject();
+        
+    }
     
     
     
