@@ -8,14 +8,15 @@ package beans;
 
 import dao.DaoViInfoHorarioEkudemic;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.joda.time.*;
 import org.primefaces.event.SelectEvent;
 import util.HibernateUtil;
 
@@ -85,10 +86,12 @@ public class horadocencia {
     {
         Date date = (Date) event.getObject();
         System.out.println("Antes de entrar al Jodatime");
-        
-        
-        
-      // System.out.println("Este es el año men pilas "+jodaTime.getYear());
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int year=calendar.get(Calendar.YEAR);
+        System.out.println("Este es el año: "+year);
+          
+      
         
     }
     
