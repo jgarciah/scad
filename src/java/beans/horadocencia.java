@@ -108,6 +108,8 @@ public class horadocencia implements Serializable{
 
     public void FechaInicialChange(SelectEvent event)
     {
+        
+        
         Date date = (Date) event.getObject();
        
         Calendar calendar = Calendar.getInstance();
@@ -117,10 +119,14 @@ public class horadocencia implements Serializable{
         int month=calendar.get(Calendar.MONTH); //Hay que sumarle uno al mes
         int day=calendar.get(Calendar.DAY_OF_MONTH);
         
+        
+        
     }
     
     public void FechaFinalChange(SelectEvent event)
     {
+        
+        
         Date date = (Date) event.getObject();
         
         Calendar calendar = Calendar.getInstance();
@@ -128,7 +134,10 @@ public class horadocencia implements Serializable{
         int year=calendar.get(Calendar.YEAR);
         
         int month=calendar.get(Calendar.MONTH); //Hay que sumarle uno al mes
-        int day=calendar.get(Calendar.DAY_OF_MONTH);          
+        int day=calendar.get(Calendar.DAY_OF_MONTH); 
+        
+        System.out.println("Esta es la fecha inicial: "+this.getFechaInicial().toString());
+        //TODO: Aqui debo de buscar las facultades existentes en esa epoca
         
         
     }
