@@ -96,4 +96,19 @@ public class horadocencia {
         
     }
     
+    public void FechaFinalChange(SelectEvent event)
+    {
+        Date date = (Date) event.getObject();
+        System.out.println("Antes de entrar al Jodatime");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        int year=calendar.get(Calendar.YEAR);
+        
+        int month=calendar.get(Calendar.MONTH);
+        int day=calendar.get(Calendar.DAY_OF_MONTH);
+          
+        System.out.println("Este es el año: "+year+ " este es el mes: "+month+" este es el dia: "+day);
+        
+    }
+    
 }
