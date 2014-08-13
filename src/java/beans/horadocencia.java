@@ -85,7 +85,9 @@ public class horadocencia {
     {
         Date date = (Date) event.getObject();
         
-        DateTime jodaTime = new DateTime(date);
+        
+        DateTime jodaTime = new DateTime();
+        
         System.out.println("Este es el año men pilas "+jodaTime.getYear());
         
     }
