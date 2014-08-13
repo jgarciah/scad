@@ -16,6 +16,7 @@ import javax.inject.Named;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.joda.time.DateTime;
 import org.primefaces.event.SelectEvent;
 import util.HibernateUtil;
 
@@ -32,6 +33,10 @@ public class horadocencia {
      */
     private List<String> comboFacultades;
     private String facultadSeleccionada;
+    private Date FechaInicial;
+    private Date FechaFinal;
+    
+    
     Session session;
     Transaction transaction;
     
@@ -72,6 +77,25 @@ public class horadocencia {
         return facultadSeleccionada;
     }
 
+    public Date getFechaInicial() {
+        return FechaInicial;
+    }
+
+    public Date getFechaFinal() {
+        return FechaFinal;
+    }
+
+    
+    
+    public void setFechaInicial(Date FechaInicial) {
+        this.FechaInicial = FechaInicial;
+    }
+
+    public void setFechaFinal(Date FechaFinal) {
+        this.FechaFinal = FechaFinal;
+    }
+   
+    
     public void setComboFacultades(List<String> comboFacultades) {
         this.comboFacultades = comboFacultades;
         
@@ -84,30 +108,27 @@ public class horadocencia {
     public void FechaInicialChange(SelectEvent event)
     {
         Date date = (Date) event.getObject();
-        System.out.println("Antes de entrar al Jodatime");
+       
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int year=calendar.get(Calendar.YEAR);
         
-        int month=calendar.get(Calendar.MONTH);
+        int month=calendar.get(Calendar.MONTH); //Hay que sumarle uno al mes
         int day=calendar.get(Calendar.DAY_OF_MONTH);
-          
-        System.out.println("Este es el año: "+year+ " este es el mes: "+month+" este es el dia: "+day);
         
     }
     
     public void FechaFinalChange(SelectEvent event)
     {
         Date date = (Date) event.getObject();
-        System.out.println("Antes de entrar al Jodatime");
+        
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         int year=calendar.get(Calendar.YEAR);
         
-        int month=calendar.get(Calendar.MONTH);
-        int day=calendar.get(Calendar.DAY_OF_MONTH);
-          
-        System.out.println("Este es el año: "+year+ " este es el mes: "+month+" este es el dia: "+day);
+        int month=calendar.get(Calendar.MONTH); //Hay que sumarle uno al mes
+        int day=calendar.get(Calendar.DAY_OF_MONTH);          
+        
         
     }
     
